@@ -1,3 +1,8 @@
+/*
+
+Question -> https://www.codechef.com/problems/REACHFAST
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

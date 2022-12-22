@@ -1,3 +1,8 @@
+/*
+
+Question -> https://www.codechef.com/problems/FARAWAY
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

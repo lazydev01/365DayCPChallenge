@@ -1,3 +1,8 @@
+/*
+
+Question -> https://www.codechef.com/problems/PERMUTATION
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
