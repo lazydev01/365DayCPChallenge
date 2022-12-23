@@ -1,3 +1,8 @@
+"""
+   Question -> https://www.codechef.com/problems/PERMUTATION
+"""
+
+
 t=int(input())
 for _ in range(t):
     n=int(input())
