@@ -1,3 +1,7 @@
+"""
+    https://www.codechef.com/problems/GRPASSN
+
+"""
 # cook your dish here
 t=int(input())
 for _ in range(t):
