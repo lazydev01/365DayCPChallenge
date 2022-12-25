@@ -42,7 +42,7 @@ cin.tie(NULL);
                 a[i]=0;
             }
         }
-        cout << *max_element(a.begin(), a.end()) << endl;
+        cout << *max_element(a.begin(),a.end()) << endl;
     }
     return 0;
 }
