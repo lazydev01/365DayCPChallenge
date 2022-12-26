@@ -5,7 +5,6 @@ Question -> https://www.codechef.com/problems/FARAWAY
 """
 
 
-# cook your dish here
 t=int(input())
 for _ in range(t):
     n,m=map(int,input().split())
