@@ -1,3 +1,10 @@
+/*
+
+Question -> https://www.codechef.com/problems/XLSQUARE
+
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
