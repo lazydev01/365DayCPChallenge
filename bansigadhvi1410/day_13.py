@@ -23,9 +23,4 @@ for _ in range(t):
         if last_d==second_last_d:
             print("no")
         else:
-            print("yes")
-            
-        
-            
-        
-        
+            print("yes")   
