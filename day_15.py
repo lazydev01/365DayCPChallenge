@@ -1,4 +1,3 @@
-```
 """
 
 https://www.codechef.com/problems/BUY1GET1
@@ -20,7 +19,3 @@ for _ in range(t):
         count += cost
     print(count)
 
-# sssssssaaa
-# {'s' : 7, 'a': 3}
-#  7/2
-```
