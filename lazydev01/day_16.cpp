@@ -1,3 +1,8 @@
+/*
+
+Question -> https://www.codechef.com/problems/AVG
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,3 +47,23 @@ cin.tie(NULL);
     }
     return 0;
 }
+
+/*
+
+
+Formulating
+
+average = sum/number of elements
+number of elements = n+k
+Given average = v
+So, sum = (n+k)*v
+We are given n elements.So, we can find sum of n elements
+Therefore, sum of n elements + sum of k elements = (n+k)*v
+sum of k elements = ((n+k)*v)-sum of n elements
+Also, we are given that all the k elements have same value
+So, k*value = (((n+k)*v)-sum of n elements)
+Hence, value =  (((n+k)*v)-sum of n elements)/k
+And applying the constraints we get the answer(k is a positive integer so needs to be a natural number)
+
+
+*/
