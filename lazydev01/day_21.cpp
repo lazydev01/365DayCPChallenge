@@ -20,7 +20,6 @@ cin.tie(NULL);
 
     while (t--)
     {
-
         string str;
         cin >> str;
         int index = 0;
