@@ -1,7 +1,5 @@
 /*
-
 Question -> https://www.codechef.com/problems/CAKE1AM
-
 */
 #include <bits/stdc++.h>
 using namespace std;
