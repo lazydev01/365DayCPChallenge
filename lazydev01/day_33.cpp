@@ -1,6 +1,6 @@
 /*
 
-Question -> https://www.codechef.com/problems/RESTORE
+Question -> https://www.codechef.com/problems/BWCELL
 
 */
 #include <bits/stdc++.h>
@@ -26,16 +26,17 @@ cin.tie(NULL);
     while (t--)
     {
 
-        int n;
-        cin >> n;
-        vector<int> arr(n);
-        for(int i=0; i<n; i++){
-            cin >> arr[i];
+        string s;
+        cin >> s;
+        int left = s.find('W');
+        int right = s.size()-left-1;
+        if(left==right){
+            cout << "Chef" << endl;
         }
-        for(int i=0; i<n; i++){
-            cout << n-arr[i]+1 << " ";
+        else{
+            cout << "Aleksa" << endl; 
         }
-        cout << endl;
+        
 
     }
     return 0;
