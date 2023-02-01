@@ -21,9 +21,14 @@ cin.tie(NULL);
     while (t--)
     {
 
-        int x, y;
-        cin >> x >> y;
-        cout << x*y << endl;
+       int x;
+       cin >> x;
+       if(x==6){
+        cout << "YES" << endl;
+       }
+       else{
+        cout << "NO" << endl;
+       }
 
     }
     return 0;
