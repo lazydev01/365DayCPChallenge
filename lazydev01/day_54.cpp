@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 
     Question -> https://www.codechef.com/problems/TIMELY
@@ -38,3 +39,23 @@ cin.tie(NULL);
     }
     return 0;
 }
+=======
+#include <iostream>
+using namespace std;
+
+int main(){
+    int test_case;
+    cin >> test_case;
+    while(test_case--){
+        int x;
+        cin >> x;
+        if(x>=67 && x<=45000){
+            cout << "YES" << endl;
+        }
+        else{
+            cout << "NO" << endl;
+        }
+    }
+	return 0;
+}
+>>>>>>> abd85cdb79e86bdd475dde17da686c9d9428a523
