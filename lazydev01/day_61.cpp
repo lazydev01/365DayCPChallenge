@@ -30,22 +30,66 @@ cin.tie(NULL);
         cin >> n >> m;
         string a, b;
         cin >> a >> b;
-        map<char, int> ma;
+        map<char, int> m_a;
+        map<char, int> m_b;
         for(int i=0; i<n; i++){
-            ma[a[i]]++;
+            m_a[a[i]]++;
         }
         for(int i=0; i<m; i++){
-            ma[b[i]]++;
+            m_b[b[i]]++;
         }
-        int count = 0;
         bool flag = false;
-        for(auto i: ma){
-            if(i.second%2!=0){
-                count++;
+        int count = 0;
+        if(n==m){
+            for(auto i: m_a){
+                if(m_b.find(i.first)==m_b.end()){
+                    flag = true;
+                    break;
+                }
             }
-            if(count > 1){
-                flag = true;
-                break;
+        }
+        else if(n<m){
+            for(int i=0; i<n; i++){
+                if(m_b.find(a[i])!=m_b.end()){
+                    m_b[a[i]]--;
+                }
+                else{
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                for(auto i:m_b){
+                    if(i.second%2!=0){
+                        count++;
+                    }
+                    if(count>1){
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+        }
+        else{
+            for(int i=0; i<m; i++){
+                if(m_a.find(b[i])!=m_a.end()){
+                    m_a[b[i]]--;
+                }
+                else{
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                for(auto i:m_a){
+                    if(i.second%2!=0){
+                        count++;
+                    }
+                    if(count>1){
+                        flag = true;
+                        break;
+                    }
+                }
             }
         }
         if(flag){
@@ -54,7 +98,6 @@ cin.tie(NULL);
         else{
             cout << "YES" << endl;
         }
-
     }
     return 0;
 }
