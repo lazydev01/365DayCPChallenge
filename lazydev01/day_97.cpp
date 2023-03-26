@@ -1,3 +1,8 @@
+/*
+
+    Question -> https://www.codechef.com/problems/PRGIFT
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,23 +26,24 @@ cin.tie(NULL);
     while (t--)
     {
 
-        int n;
-        cin >> n;
+        int n, k;
+        cin >> n >> k;
         vector<int> arr(n);
+        int even = 0;
         for(int i=0; i<n; i++){
             cin >> arr[i];
+            if(arr[i]%2==0){
+                even++;
+            }
         }
-        int curr_max = arr[n-1]-1;
-        int ans = -1;
-        for(int i=n-1; i>=0; i--){
-            ans = max(ans, curr_max-arr[i]);
-            curr_max = max(curr_max, arr[i]);
+        if(even==n && k==0){
+            cout << "NO" << endl;
         }
-        if(ans <= 0){
-            cout << "UNFIT" << endl;
+        else if(even>=k){
+            cout << "YES" << endl;
         }
         else{
-            cout << ans << endl;
+            cout << "NO" << endl;
         }
         
 
