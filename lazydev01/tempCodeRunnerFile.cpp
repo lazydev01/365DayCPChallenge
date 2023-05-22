@@ -26,7 +26,7 @@ cin.tie(NULL);
   while(t--){
     int a, b, c;
     cin >> a >> b >> c;
-    vector<int> arr;
+    vector<int> arr(3);
     arr.push_back(a);
     arr.push_back(b);
     arr.push_back(c);
