@@ -40,10 +40,35 @@ void sortAnArrayOf0s1sAnd2s(){
     cout << endl;
 }
 
+void majorityElementInAnArray(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    map<int, int> m;
+    for(int i=0; i<n; i++){
+        m[arr[i]]++;
+    }
+    bool flag = false;
+    for(auto i : m){
+        if(i.second > n/2){
+            cout << i.first << endl;
+            flag = true;
+            break;
+        }
+    }
+    if(!flag){
+        cout << -1 << endl;
+    } 
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-    sortAnArrayOf0s1sAnd2s();
+    // sortAnArrayOf0s1sAnd2s();
+    majorityElementInAnArray();
     return 0;
 }
