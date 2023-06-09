@@ -61,11 +61,11 @@ void threeSumOptimal(){
         vector<int> temp = {arr[i], arr[j], arr[k]};
         ans.push_back(temp);
         j++;
-        while(arr[j]==arr[j+1] && j<k){
+        while(arr[j]==arr[j-1] && j<k){
           j++;
         }
         k--;
-        while(arr[k]==arr[k-1] && j<k){
+        while(arr[k]==arr[k+1] && j<k){
           k--;
         }
       }
@@ -88,6 +88,6 @@ int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-
+    threeSumOptimal();
     return 0;
 }
