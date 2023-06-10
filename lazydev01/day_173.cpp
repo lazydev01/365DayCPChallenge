@@ -1,3 +1,8 @@
+/*
+
+    Question -> https://www.codechef.com/problems/MISSP
+
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -30,11 +35,10 @@ cin.tie(NULL);
             mp[arr[i]]++;
         }
         for(auto i : mp){
-            if(i.second == 1){
+            if(i.second%2 == 1){
                 cout << i.first << endl;
             }
         }
-
     }
     return 0;
 }
