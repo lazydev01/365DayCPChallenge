@@ -31,12 +31,12 @@ void nthRootOfM(){
     while(low<=high){
         int mid = (low+high)/2;
         int powOfMid = power(mid, n, m);
-        if(powOfMid==m){
+        if(powOfMid==0){
             cout << mid << endl;
             flag = true;
             break;
         }
-        else if(powOfMid<m){
+        else if(powOfMid==-1){
             low = mid + 1;
         }
         else{
