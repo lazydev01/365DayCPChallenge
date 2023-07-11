@@ -12,23 +12,25 @@ using namespace std;
 
 void merge(vector<int> &arr, int low, int mid, int high){
     vector<int> temp;
-    while(low<mid && mid<high){
-        if(arr[low]<=arr[mid]){
-            temp.push_back(arr[low]);
-            low++;
+    int left = low;
+    int right = mid + 1;
+    while(left<=mid && right<=high){
+        if(arr[left]<=arr[right]){
+            temp.push_back(arr[left]);
+            left++;
         }
         else{
-            temp.push_back(arr[mid]);
-            mid++;
+            temp.push_back(arr[right]);
+            right++;
         }
     }
-    while(low<mid){
-        temp.push_back(arr[low]);
-        low++;
+    while(left<=mid){
+        temp.push_back(arr[left]);
+        left++;
     }
-    while(mid<high){
-        temp.push_back(arr[mid]);
-        mid++;
+    while(right<=high){
+        temp.push_back(arr[right]);
+        right++;
     }
     for(int i=low; i<=high; i++){
         arr[i] = temp[i-low];
