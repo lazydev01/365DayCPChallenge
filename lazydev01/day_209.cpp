@@ -27,6 +27,7 @@ cin.tie(NULL);
     {
 
         int n, x, y;
+        cin >> n >> x >> y;
         if(n<=(x*y)){
             cout << "YES" << endl;
         }
