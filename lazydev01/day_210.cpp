@@ -47,14 +47,6 @@ void combinationSum2(){
     }
 }
 
-void minimizeMaximumBetweenGasStations(){
-    int n, k;
-    cin >> n >> k;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
-    }
-}
 
 int32_t main()
 {
