@@ -45,12 +45,82 @@ void nQueens(){
     cin >> n;
 }
 
+// Codeforces Round 887 (Div. 2)
+
+/*
+
+    1 8 13   
+    2 9 12
+    3 10 11
+    4 11 10
+
+    1 8 14
+    2 9 13
+    3 10 12
+    4 11 11
+
+*
+**/ 
+
+void problemA(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        int minDiff = INT_MAX;
+        for(int i=1; i<n; i++){
+            minDiff = min(minDiff, arr[i]-arr[i-1]);
+        }
+        if(minDiff<0){
+            cout << 0 << endl;
+        }
+        else{
+            cout << (minDiff/2) + 1 << endl;
+        }
+    }
+}
+
+void problemB(){
+
+    vector<int> fibb;
+    fibb.push_back(0);
+    fibb.push_back(1);
+    int ind = 1;
+    while(fibb[ind]<=2e5){
+        fibb.push_back(fibb[ind] + fibb[ind-1]);
+        ind++;
+    }
+
+    int t;
+    cin >> t;
+    cout << t << endl;
+    while(t!=0){
+        int n, k;
+        cin >> n >> k;
+        cout << n << k << endl;
+        if(n<fibb[k-1]){
+            cout << 0 << endl;
+        }
+        else{
+            cout << 1 << endl;
+        }
+        t--;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    printPermutationOfStringOrArrayWithNoExtraSpace();
+    // printPermutationOfStringOrArrayWithNoExtraSpace();
+    // problemA();
+    problemB();
 
     return 0;
 }
