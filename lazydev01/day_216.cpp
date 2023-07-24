@@ -40,10 +40,7 @@ void printPermutationOfStringOrArrayWithNoExtraSpace(){
 }
 
 
-void nQueens(){
-    int n;
-    cin >> n;
-}
+
 
 // Codeforces Round 887 (Div. 2)
 
