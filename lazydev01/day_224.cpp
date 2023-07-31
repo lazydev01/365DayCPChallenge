@@ -44,8 +44,8 @@ int mergeSort(vector<int> &arr, int low, int high){
     int cnt = 0;
     if(low>=high) return cnt;
     int mid = (low + high)/2;
-    mergeSort(arr, low, mid);
-    mergeSort(arr, mid + 1, high);
+    cnt+= mergeSort(arr, low, mid);
+    cnt+=mergeSort(arr, mid + 1, high);
     cnt += merge(arr, low, mid, high);
     return cnt;
 }
