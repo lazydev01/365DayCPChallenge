@@ -147,11 +147,6 @@ long long int houseRobberSpaceOptimization(vector<int>& valueInHouse)
     return max(firstIgnored, lastIgnored);
 }
 
-int ninjaTraining(int n, vector<vector<int>> &points)
-{
-    
-}
-
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
