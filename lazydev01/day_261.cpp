@@ -46,11 +46,6 @@ int canYouMake(string &s1, string &s2){
     return s1.size() + s2.size() - (2*cmn);
 }
 
-string shortestSupersequence(string a, string b)
-{
-	
-}
-
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
