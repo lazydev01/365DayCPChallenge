@@ -59,11 +59,6 @@ string shortestSupersequence(string a, string b)
     return final;
 }
 
-int distinctSubsequences(string &str, string &sub)
-{
-	
-}
-
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
