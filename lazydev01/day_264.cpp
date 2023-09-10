@@ -79,8 +79,8 @@ int editDistanceSpaceOptimization(string str1, string str2){
     for(int j=0; j<=str2.size(); j++){
         prev[j] = j;
     }
-    curr[0] = prev[0]+1;
     for(int i=1; i<=str1.size(); i++){
+        curr[0] = i;
         for(int j=1; j<=str2.size(); j++){
             if(str1[i-1]==str2[j-1]){
                 curr[j] = 0 + prev[j-1];
