@@ -103,11 +103,6 @@ int distinctSubsequencesMoreSpaceOptimization(string &str, string &sub){
     return curr[m];
 }
 
-int editDistance(string str1, string str2)
-{
-    //write you code here
-}
-
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
