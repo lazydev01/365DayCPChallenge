@@ -55,7 +55,7 @@ bool stringMatchingMemoization(int i, int j, string &pattern, string &text, vect
     if(pattern[i]=='*'){
         return dp[i][j] = stringMatchingMemoization(i-1, j, pattern, text, dp) || stringMatchingMemoization(i, j-1, pattern, text, dp);
     }
-    return false;
+    return dp[i][j] = false;
 }
 
 bool wildcardMatchingMemoization(string pattern, string text){
