@@ -90,11 +90,6 @@ int maximumProfit(vector<int> &arr){
     return profit;
 }
 
-long getMaximumProfit(long *values, int n)
-{
-    
-}
-
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
