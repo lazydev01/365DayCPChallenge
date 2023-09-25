@@ -46,3 +46,34 @@ cin.tie(NULL);
     }
     return 0;
 }
+
+/*
+
+    Question -> https://codeforces.com/contest/1879/problem/A
+
+*/
+
+void problemA(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int pw, pe;
+        cin >> pw >> pe;
+        int max_endurance = 0;
+        for(int i=1; i<n; i++){
+            int w, e;
+            cin >> w >> e;
+            if(w>=pw){
+                max_endurance = max(max_endurance, e);
+            }
+        }
+        if(max_endurance<pe){
+            cout << pw << endl;
+            continue;
+        }
+        cout << -1 << endl;
+    }
+
+}
