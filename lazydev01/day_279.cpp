@@ -10,11 +10,6 @@ using namespace std;
 #define YES cout<<"YES\n"
 #define NO cout<<"NO\n"
 
-int matrixMultiplication(vector<int> &arr, int N)
-{
-    
-}
-
 /*
 
     Question -> https://www.codechef.com/problems/APPENDOR
