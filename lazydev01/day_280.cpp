@@ -61,11 +61,54 @@ int matrixMultiplicationTabulation(vector<int> &arr, int N){
     return dp[1][N-1];
 }
 
+/*
+
+    https://codeforces.com/contest/1882/problem/A
+
+*/
+
+void problemA(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        int cnt = 1;
+        for(int i=0; i<n; i++){
+            if(arr[i]==i+cnt){
+                cnt++;
+            }
+        }
+        cout << n - 1 + cnt << endl;
+    }
+}
+
+void problemB(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        for(int i=0; i<n; i++){
+            int k;
+            cin >> k;
+            vector<int> arr(k);
+            for(int j=0; j<k; j++){
+                cin >> arr[j];
+            }
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    
+    problemA();
     return 0;
 }
