@@ -4,6 +4,7 @@
         "cstdlib": "cpp",
         "tuple": "cpp",
         "vector": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "*.tcc": "cpp"
     }
 }
