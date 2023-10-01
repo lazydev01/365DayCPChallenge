@@ -12,11 +12,6 @@ using namespace std;
 
 int mod = 1e9 + 7;
 
-int evaluateExp(string & exp) {
-    return calcExp(0, exp.size()-1, 1, exp);
-}
-
-
 long long calcExp(int i, int j, bool isTrue, string &exp){
     if(i>j) return 0;
     if(i==j){
@@ -57,9 +52,8 @@ long long calcExp(int i, int j, bool isTrue, string &exp){
     return ways;
 }
 
-int evaluateExpMemoization(string & exp){
-    vector<vector<vector<long long>>> dp(exp.size(), vector<vector<long long>>(exp.size(), vector<long long>(2, -1)));
-    return calcExpMemoization(0, exp.size()-1, true,exp, dp);
+int evaluateExp(string & exp) {
+    return calcExp(0, exp.size()-1, 1, exp);
 }
 
 long long calcExpMemoization(int i, int j, bool isTrue, string & exp, vector<vector<vector<long long>>> &dp){
@@ -110,9 +104,19 @@ long long calcExpMemoization(int i, int j, bool isTrue, string & exp, vector<vec
     return dp[i][j][isTrue] = ways;
 }
 
-int palindromePartitioning(string str)
-{
-    return calcMinCost(0, str);
+
+int evaluateExpMemoization(string & exp){
+    vector<vector<vector<long long>>> dp(exp.size(), vector<vector<long long>>(exp.size(), vector<long long>(2, -1)));
+    return calcExpMemoization(0, exp.size()-1, true,exp, dp);
+}
+
+bool isPalindrome(string &str){
+    for(int i=0; i<str.size()/2; i++){
+        if(str[i]!=str[str.size()-1-i]){
+            return false;
+        }
+    }
+    return true;
 }
 
 int calcMinCost(int i, string &str){
@@ -131,20 +135,12 @@ int calcMinCost(int i, string &str){
     return cost;
 }
 
-bool isPalindrome(string &str){
-    for(int i=0; i<str.size()/2; i++){
-        if(str[i]!=str[str.size()-1-i]){
-            return false;
-        }
-    }
-    return true;
+
+int palindromePartitioning(string str)
+{
+    return calcMinCost(0, str);
 }
 
-int palindromePartitioningMemoization(string str)
-{
-    vector<int> dp(str.size(), -1);
-    return calcMinCostMemoization(0, str, dp) - 1;
-}
 
 int calcMinCostMemoization(int i, string &str, vector<int> &dp){
     if(i>=str.size()){
@@ -164,6 +160,14 @@ int calcMinCostMemoization(int i, string &str, vector<int> &dp){
     return dp[i] = cost;
 }
 
+int palindromePartitioningMemoization(string str)
+{
+    vector<int> dp(str.size(), -1);
+    return calcMinCostMemoization(0, str, dp) - 1;
+}
+
+
+
 int palindromePartitioningTabulation(string str)
 {
     int n = str.size();
@@ -182,12 +186,41 @@ int palindromePartitioningTabulation(string str)
     return dp[0];
 }
 
+int cardGame(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        long long sum_pos = 0;
+        int first_pos = -1;
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+            if(arr[i]>0){
+                if(first_pos==-1){
+                    first_pos = i;
+                }
+                sum_pos += arr[i];   
+            }
+        }
+        if(first_pos == 1){
+            if(arr[1]> abs(arr[0])){
+                sum_pos += arr[0];
+            }
+            else{
+                sum_pos -= arr[1];
+            }
+        }
+        cout << sum_pos << endl;
+    }
+}
 
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-
     
+    cardGame();
     return 0;
 }
