@@ -101,6 +101,27 @@ void weaponValue(){
     }
 }
 
+int calcCost(int m, int n){
+    if(m>=n){
+        return m-n;
+    }
+}
+
+int twoButtons(){
+    int m, n;
+    cin >> m >> n;
+    return calcCost(m, n);
+}
+
+/*
+
+    3 12
+    3 13
+    4 12
+    4 13
+
+*/
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
