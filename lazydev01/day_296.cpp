@@ -10,17 +10,6 @@ using namespace std;
 #define YES cout<<"YES\n"
 #define NO cout<<"NO\n"
 
-void fearOfTheDark(){
-    int t;
-    cin >> t;
-    while(t--){
-        int p1, p2;
-        cin >> p1 >> p1;
-        int a1, a2, b1, b2;
-        cin >> a1 >> a2 >> b1 >> b2;
-    }
-}
-
 void offByOne(){
     int a, b;
     cin >> a >> b;

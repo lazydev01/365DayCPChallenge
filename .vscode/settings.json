@@ -5,6 +5,7 @@
         "tuple": "cpp",
         "vector": "cpp",
         "ostream": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "iomanip": "cpp"
     }
 }
