@@ -64,11 +64,22 @@ void takeItEasy(){
     }
 }
 
+void dullOperation(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        cout << n <<  " " << n-1 << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    takeItEasy();
+    // takeItEasy();
+    dullOperation();
     return 0;
 }
