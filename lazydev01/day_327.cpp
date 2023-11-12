@@ -20,11 +20,30 @@ void survivalTime(){
     }
 }
 
+void chefFantasy11(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        cout << n * (n-1) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    survivalTime();
+    // survivalTime();
+    chefFantasy11();
     return 0;
 }
+
+/*
+
+4
+
+1 2 3 4
+
+*/
