@@ -26,11 +26,27 @@ void chessPairing(){
     }
 }
 
+void palindromicPrimeNumbers(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        if(n<5){
+            cout << "0 " << n << endl;
+        }
+        else{
+            cout << "1 " << n-1 << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    chessPairing();
+    // chessPairing();
+    palindromicPrimeNumbers();
     return 0;
 }
