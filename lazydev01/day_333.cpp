@@ -50,3 +50,11 @@ cin.tie(NULL);
     palindromicPrimeNumbers();
     return 0;
 }
+
+/*
+
+
+1001
+1 15 16 17
+
+*/
