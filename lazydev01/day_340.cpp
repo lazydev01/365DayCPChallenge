@@ -21,11 +21,22 @@ void worthOfAVideo(){
 
 }
 
+void bestOfNSets(){
+    int t;
+    cin >> t;
+    while(t--){
+        int x, y;
+        cin >> x >> y;
+        cout << 2 * max(x, y) - 1 << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    worthOfAVideo();
+    // worthOfAVideo();
+    bestOfNSets();
     return 0;
 }
