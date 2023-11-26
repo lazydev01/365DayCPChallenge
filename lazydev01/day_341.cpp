@@ -54,11 +54,52 @@ void alterEgo(){
     }
 }
 
+void multipleOf9(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        int sum_s = 0;
+        int count_question_mark = 0;
+        for(auto i : s){
+            if(i!='?'){
+                sum_s += i - '0';
+            }
+            else{
+                count_question_mark++;
+            }
+        }
+        if(s[0]=='?'){
+            cout << '1';
+            for(int i=0; i<count_question_mark-1; i++){
+                cout << '0';
+            }
+            cout << endl;
+        }
+        else if(sum_s % 9 == 0){
+            for(int i=0; i<count_question_mark-1; i++){
+                cout << '1';
+            }
+            cout << '2' << endl;
+        }
+        else{
+            for(int i=0; i<count_question_mark-1; i++){
+                cout << '1';
+            }
+            cout << '1' << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    alterEgo();
+    // alterEgo();
+    multipleOf9();
     return 0;
 }
