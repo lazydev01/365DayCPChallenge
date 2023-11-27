@@ -6,6 +6,7 @@
         "vector": "cpp",
         "ostream": "cpp",
         "*.tcc": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "map": "cpp"
     }
 }
