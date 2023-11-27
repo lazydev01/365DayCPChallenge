@@ -94,12 +94,32 @@ void multipleOf9(){
     }
 }
 
+void clanExpansion(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        map<int, vector<int>> mp;
+        for(int i=0; i<n; i++){
+            mp[arr[i]].push_back(i+1);
+        }
+        map<int, int> mp_ans;
+        
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // alterEgo();
-    multipleOf9();
+    // multipleOf9();
+    clanExpansion();
     return 0;
 }
