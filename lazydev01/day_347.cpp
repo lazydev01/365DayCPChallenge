@@ -26,11 +26,25 @@ void airlines(){
     }
 }
 
+void amILucky(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, x, k;
+        cin >> n >> x >> k;
+        int girls = n-x;
+        int remaining_boys = x%k;
+        int remaining_girls = girls%k;
+        cout << max(remaining_girls, remaining_boys) - min(remaining_girls, remaining_boys) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    airlines();
+    // airlines();
+    amILucky();
     return 0;
 }
