@@ -38,3 +38,13 @@ cin.tie(NULL);
     toMyCritics();
     return 0;
 }
+
+/*
+
+1 -> 1
+2 -> 1
+3 -> 3
+4 -> 
+
+
+*/
