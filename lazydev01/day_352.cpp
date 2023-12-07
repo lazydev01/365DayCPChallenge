@@ -34,11 +34,23 @@ void laptops(){
     }
 }
 
+void notFound(){
+    int x;
+    cin >> x;
+    if(x==404){
+        cout << "NOT FOUND" << endl;
+    }
+    else{
+        cout << "FOUND" << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    laptops();
+    // laptops();
+    notFound();
     return 0;
 }
