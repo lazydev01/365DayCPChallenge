@@ -26,11 +26,37 @@ void icpcBalloons(){
     }
 }
 
+void lcmMania(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        if(n<=2 || (((n & (n-1)) == 0))){
+            cout << -1 << endl;
+        }
+        else if(n%2!=0){
+            cout << 1 << " " << 1 << " " << n/2 << endl;
+        }
+        else if(n%3==0){
+            cout << n/3 << " " << n/3 << " " << n/3 << endl;
+        }
+        else{
+            int val = 2;
+            while(!(val & n)){
+                val*=2;
+            }
+            cout << val << " " << val << " " << (n-val)/2 << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    icpcBalloons();
+    // icpcBalloons();
+    lcmMania();
     return 0;
 }
