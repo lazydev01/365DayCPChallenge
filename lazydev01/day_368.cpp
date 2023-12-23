@@ -38,11 +38,41 @@ void makeNZero(){
     }
 }
 
+void maximumScore(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int x;
+        int ones = 0;
+        int zeros = 0;
+        for(int i=0; i<n; i++){
+            cin >> x;
+            if(x==0){
+                zeros++;
+            }
+            else{
+                ones++;
+            }
+        }
+        cout << min(ones, zeros) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    makeNZero();
+    // makeNZero();
+    maximumScore();
     return 0;
 }
+
+/*
+
+1 1 0 1 1 1
+
+
+*/
