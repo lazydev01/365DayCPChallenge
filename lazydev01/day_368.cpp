@@ -60,13 +60,46 @@ void maximumScore(){
     }
 }
 
+void sumNeq(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        set<int> s;
+        for(auto i : arr){
+            s.insert(i);
+        }
+        if(s.size()==1){
+            cout << "NO" << endl;
+        }
+        
+        else if(arr.size() == 4){
+           if((arr[0] + arr[1]) == (arr[2] + arr[3])){
+            cout << "NO" << endl;
+           }
+           else{
+            cout << "YES" << endl;
+           }
+        }
+        else{
+            cout << "YES" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // makeNZero();
-    maximumScore();
+    // maximumScore();
+    sumNeq();
     return 0;
 }
 
