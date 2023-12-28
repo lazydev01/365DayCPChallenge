@@ -45,12 +45,24 @@ void makeAllEqual(){
     }
 }
 
+void christmasGreetings(){
+    int x;
+    cin >> x;
+    if(x==25){
+        cout << "CHRISTMAS" << endl;
+    }
+    else{
+        cout << "ORDINARY" << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // aplusb();
-    makeAllEqual();
+    // makeAllEqual();
+    christmasGreetings();
     return 0;
 }
