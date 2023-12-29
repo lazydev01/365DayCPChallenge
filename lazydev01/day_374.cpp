@@ -34,11 +34,23 @@ void colourBlindness(){
     }
 }
 
+void paintingWalls(){
+    int t;
+    cin >> t;
+    while(t--){
+        int x, y, z;
+        cin >> x >> y >> z;
+        int costPerWall = 2*x*y;
+        cout << z/costPerWall << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    colourBlindness();
+    // colourBlindness();
+    paintingWalls();
     return 0;
 }
