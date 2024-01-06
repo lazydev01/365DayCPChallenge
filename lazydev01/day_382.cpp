@@ -35,11 +35,22 @@ void goodKid(){
     }
 }
 
+void codechefRound(){
+    int n;
+    cin >> n;
+    if(n==4){
+        cout << "YES" << endl;
+    }
+    else{
+        cout << "NO" << endl;
+    }
+}
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    goodKid();
+    // goodKid();
+    codechefRound();
     return 0;
 }
