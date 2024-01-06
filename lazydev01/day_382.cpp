@@ -45,12 +45,26 @@ void codechefRound(){
         cout << "NO" << endl;
     }
 }
+
+
+void chocolateDistribution(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        cout << (ceil)(n/2.0) << " " << n << endl;
+    }
+}
+
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // goodKid();
-    codechefRound();
+    // codechefRound();
+    chocolateDistribution();
     return 0;
 }
