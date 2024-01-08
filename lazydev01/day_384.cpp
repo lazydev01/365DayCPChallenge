@@ -31,11 +31,52 @@ void decoratingChristmasTree(){
     }
 }
 
+void aPlusBRemastered(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        vector<int> b(n);
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
+        for(int i=0; i<n; i++){
+            cin >> b[i];
+        }
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end(), greater<int>());
+        int el = a[0] + b[0];
+        bool flag = false;
+        for(int i=1; i<n; i++){
+            if(el!=(a[i] + b[i])){
+                flag = true;
+                break;
+            }
+        }
+        if(flag){
+            cout << -1 << endl;
+        }
+        else{
+            for(auto i : a){
+                cout << i << " ";
+            }
+            cout << endl;
+            for(auto i : b){
+                cout << i << " ";
+            }
+            cout << endl;
+        }
+    }
+}
+    
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    decoratingChristmasTree();
+    // decoratingChristmasTree();
+    aPlusBRemastered();
     return 0;
 }
