@@ -70,6 +70,55 @@ void aPlusBRemastered(){
         }
     }
 }
+
+void makeAllZero(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i = 0; i < n; i++){
+            cin >> arr[i];
+        }
+        int count = 0;
+        while(arr[0]!=0){
+            int mini = INT_MAX;
+            int index_count = -1;
+            for(int i = 0; i < n; i++){
+                if(arr[i]==0){
+                    index_count = i;
+                    break;
+                }
+                mini = min(mini, arr[i]);
+            }
+            if(index_count==-1){
+                index_count = n;
+            }
+            if(index_count < mini){
+                count+=(index_count);
+                for(int i = 0; i < index_count; i++){
+                    arr[i] = 0;
+                }
+            }
+            else{
+                count+=mini;
+                for(int i = 0; i < index_count; i++){
+                    arr[i]-=mini;
+                }
+            }
+        }
+        for(auto i : arr){
+            if(i!=0){
+                count++;
+            }
+        }
+        if(count>n){
+            count = n;
+        }
+        cout << count << endl;
+    }
+}
     
 int32_t main()
 {
@@ -77,6 +126,19 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // decoratingChristmasTree();
-    aPlusBRemastered();
+    // aPlusBRemastered();
+    makeAllZero();
     return 0;
 }
+
+/*
+
+5 3 3 5 2 4 5 2 1
+
+4 2 2 4 1 3 4 1 0
+
+3 1 1 3 0 2 3 0 0
+
+2 0 0 2 0 2 3 0 0
+
+*/
