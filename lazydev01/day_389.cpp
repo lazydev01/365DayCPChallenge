@@ -36,11 +36,23 @@ void makeAllZero(){
     }
 }
 
+void minimumWage(){
+    int n;
+    cin >> n;
+    if(n>11){
+        cout << "YES" << endl;
+    }
+    else{
+        cout << "NO" << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    makeAllZero();
+    // makeAllZero();
+    minimumWage();
     return 0;
 }
