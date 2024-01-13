@@ -47,12 +47,46 @@ void minimumWage(){
     }
 }
 
+void hattrick(){
+    int t;
+    cin >> t;
+    while(t--){
+        char a, b, c, d, e, f;
+        cin >> a >> b >> c >> d >> e >> f;
+        int ans = 0;
+        int count = 0;
+        vector<char> arr(6);
+        arr.push_back(a);
+        arr.push_back(b);
+        arr.push_back(c);
+        arr.push_back(d);
+        arr.push_back(e);
+        arr.push_back(f);
+        for(auto i : arr){
+            if(i=='W'){
+                count++;
+            }
+            else{
+                count = 0;
+            }
+            ans = max(ans, count);
+        }
+        if(ans>=3){
+            cout << "YES" << endl;
+        }
+        else{   
+            cout << "NO" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // makeAllZero();
-    minimumWage();
+    // minimumWage();
+    hattrick();
     return 0;
 }
