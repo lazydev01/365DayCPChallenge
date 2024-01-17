@@ -30,11 +30,35 @@ void twoElevators(){
     }
 }
 
+void chefProduct(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int sqrroot = sqrtl(n);
+        if(n%2==0 && sqrroot%2==1){
+            sqrroot--;
+        }
+        cout << (sqrroot+1)/2 << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    twoElevators();
+    // twoElevators();
+    chefProduct();
     return 0;
 }
+
+/*
+
+7
+1 3 5
+
+
+
+*/
