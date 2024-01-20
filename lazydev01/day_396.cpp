@@ -22,10 +22,36 @@ void earlyPhone(){
     }
 }
 
+void spellShorting(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        string ans = "";
+        int index = n-1;
+        for(int i=0; i<n-1; i++){
+            if(s[i]-'a' > s[i+1]-'a'){
+                index = i;
+                break;
+            }
+        }
+        for(int i=0; i<n; i++){
+            if(i!=index){
+                ans += s[i];
+            }
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
-    earlyPhone();
+    // earlyPhone();
+    spellShorting();
     return 0;
 }
