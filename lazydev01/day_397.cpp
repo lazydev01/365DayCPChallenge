@@ -30,11 +30,61 @@ void weaponChoice(){
     }
 }
 
+void notPrimePermutation(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        if(n<3){
+            cout << -1 << endl;
+        }
+        else if(n%2==0){
+            for(int i=0; i<n; i++){
+                int ans = (n+1) - arr[i];
+                if(ans%2){
+                    ans++;
+                }
+                else{
+                    ans--;
+                }
+                cout << ans << " ";
+            }
+            cout << endl;
+        }
+        else{
+            for(int i=0; i<n; i++){
+                cout << (n+1)-arr[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    weaponChoice();
+    // weaponChoice();
+    notPrimePermutation();
     return 0;
 }
+
+/*
+
+1 2 3 4
+4 3 2 1
+3 4 1 2
+
+1 2 3 4 5 6
+6 5 4 3 2 1
+5 6 3 4 1 2
+
+
+
+*/
