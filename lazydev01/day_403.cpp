@@ -39,11 +39,29 @@ void joinStates(){
     }
 }
 
+void subsetGCD(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, k;
+        cin >> n >> k;
+        int ans = n/k;
+        int count = 0;
+        while(count<k){
+            cout << ans << " ";
+            ans += (n/k);
+            count++;
+        }
+        cout << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    joinStates();
+    // joinStates();
+    subsetGCD();
     return 0;
 }
