@@ -56,12 +56,29 @@ void subsetGCD(){
     }
 }
 
+void xorry1(){
+    int t;
+    cin >> t;
+    while(t--){
+        int x;
+        cin >> x;
+        int log_x = log2(x);
+        int ans_1 = 1;
+        for(int i=0; i<log_x; i++){
+            ans_1*=2;
+        }
+        int ans_2 = x^ans_1;
+        cout << min(ans_2, ans_1) << " " << max(ans_2, ans_1) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // joinStates();
-    subsetGCD();
+    // subsetGCD();
+    xorry1();
     return 0;
 }
