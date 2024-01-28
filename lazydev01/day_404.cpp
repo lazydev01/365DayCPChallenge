@@ -33,12 +33,43 @@ void xorry2(){
     }
 }
 
+void equalityEtiquette(){
+    int t;
+    cin >> t;
+    while(t--){
+        int a, b;
+        cin >> a >> b;
+        int diff = abs(a-b);
+        int low = 0;
+        int high = 100000;
+        while(low!=high){
+            int mid = (low+high)/2;
+            if(((mid*(mid+1))/2) < diff){
+                low = mid+1;
+            }
+            else{
+                high = mid;
+            }
+        }
+         if((low)*(low+1)/2 % 2 == diff%2){
+            cout<<low<<endl;
+        }
+        else if((low+1)*(low+2)/2 % 2 == diff%2){
+            cout<<low+1<<endl;
+        }
+        else if((low+2)*(low+3)/2 % 2 == diff%2){
+            cout<<low+2<<endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    xorry2();
+    // xorry2();
+    equalityEtiquette();
     return 0;
 }
 
@@ -93,3 +124,29 @@ cin.tie(NULL);
 11 7
 
  */
+
+/*
+
+4 4
+0
+
+5 4
+5 5
+1
+
+1 8
+2 8
+2 6
+5 6
+5 2
+
+
+
+
+
+
+
+
+
+
+*/
