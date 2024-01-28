@@ -63,13 +63,51 @@ void equalityEtiquette(){
     }
 }
 
+int sumOfNums(int start, int end){
+    int mod = 998244353l;
+    return ((((end)*(end+1))/2)%mod) - ((((start)*(start+1))/2)%mod);
+}
+
+void spreadSpree(){
+    int mod = 998244353l;
+    int t;
+    cin >> t;
+    while(t--){
+        int n, m;
+        cin >> n >> m;
+        int max_n_m = max(m, n);
+        int min_n_m = min(m, n);
+        int ans = 0;
+        if(max_n_m % 2){
+            if(min_n_m <= (max_n_m/2)+1){
+                ans = (sumOfNums(0, min_n_m)*((max_n_m/2)+1))%mod;
+            }
+            else{
+                ans = (sumOfNums(min_n_m-((max_n_m/2)+1), (max_n_m/2)+1)*((max_n_m/2)+1))%mod;
+            }
+        }
+        else{
+            if(min_n_m <= (max_n_m/2)+1){
+                ans += ((max_n_m/2) * sumOfNums(0, min_n_m))%mod;
+                ans += (((max_n_m/2)+1) * sumOfNums(0, min_n_m))%mod;
+            }
+            else{
+                ans += ((max_n_m/2) * sumOfNums(min_n_m-((max_n_m/2)+1), (max_n_m/2)+1))%mod;
+                ans += (((max_n_m/2)+1) * sumOfNums(min_n_m-((max_n_m/2)+1), (max_n_m/2)+1))%mod;
+            }
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // xorry2();
-    equalityEtiquette();
+    // equalityEtiquette();
+    spreadSpree();
     return 0;
 }
 
@@ -141,12 +179,89 @@ cin.tie(NULL);
 5 2
 
 
+*/
+
+/*
+
+10 2
+
+**
+**
+**
+**
+**
+**
+**
+**
+**
+**
+
+5 1
+5 2
+6 1
+6 2
+
+10 4
+
+****
+****
+****
+****
+****
+****
+****
+****
+****
+****
+
+10 8
+
+********
+********
+********
+********
+********
+********
+********
+********
+********
+********
+
+10 3
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
 
 
+10 7
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+*******
+*******
 
-
-
-
-
-
+9 5
+******
+******
+******
+******
+******
+******
+******
+******
+******
 */
