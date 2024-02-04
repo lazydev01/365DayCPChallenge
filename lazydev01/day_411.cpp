@@ -36,11 +36,53 @@ void cookieDay(){
     }
 }
 
+void anotherGoodString(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, q;
+        cin >> n >> q;
+        string s;
+        cin >> s;
+        vector<char> queries(q);
+        for(int i=0; i<q; i++){
+            cin >> queries[i];
+        }
+        char curr = ' ';
+        int count = 1;
+        int ans = 1;
+        for(char i : s){
+            if(curr==i){
+                count++;
+            }
+            else{
+                count = 1;
+            }
+            curr = i;
+            ans = max(ans, count);
+        }
+        cout << ans << " ";
+        for(char i : queries){
+            if(curr==i){
+                count++;
+            }
+            else{
+                count = 1;
+            }
+            curr = i;
+            ans = max(ans, count);
+            cout << ans << " ";
+        }
+        cout << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    cookieDay();
+    // cookieDay();
+    anotherGoodString();
     return 0;
 }
