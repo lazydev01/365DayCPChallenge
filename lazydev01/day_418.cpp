@@ -20,11 +20,22 @@ void largestK(){
     }
 }
 
+void subOrSwap(){
+    int t;
+    cin >> t;
+    while(t--){
+        int x, y;
+        cin >> x >> y;
+        cout << __gcd(x, y) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    largestK();
+    // largestK();
+    subOrSwap();
     return 0;
 }
