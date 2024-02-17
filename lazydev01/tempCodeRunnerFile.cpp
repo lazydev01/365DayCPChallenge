@@ -22,7 +22,11 @@ void theManCode(){
   while(t--){
     int n;
     cin >> n;
-    cout << (n/2) + (n%2) << " " << (n/3) + (n%3!=0) << endl;
+    if(n==1){
+      cout << 1 << " " << 1 << endl;
+      continue;
+    }
+    cout << (n+1)/2 << " " << n/2 << endl;
   }
 }
 
