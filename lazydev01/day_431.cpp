@@ -50,12 +50,31 @@ void problemReviews(){
     }
 }
 
+void manOfTheMatch(){
+    int t;
+    cin >> t;
+    while(t--){
+        int player;
+        int maxPoints = -1;
+        for(int i=1; i<=22; i++){
+            int runs, wickets;
+            cin >> runs >> wickets;
+            if((runs + (20*wickets))>maxPoints){
+                maxPoints = (runs + (20*wickets));
+                player = i;
+            }
+        }
+        cout << player << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // healthySleep();
-    problemReviews();
+    // problemReviews();
+    manOfTheMatch();
     return 0;
 }
