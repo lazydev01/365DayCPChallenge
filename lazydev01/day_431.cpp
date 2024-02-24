@@ -24,11 +24,38 @@ void healthySleep(){
     }
 }
 
+void problemReviews(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        bool flag = false;
+        for(auto i : arr){
+            if(i<=4){
+                flag = true;
+                break;
+            }
+        }
+        if(flag){
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    healthySleep();
+    // healthySleep();
+    problemReviews();
     return 0;
 }
