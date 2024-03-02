@@ -21,11 +21,28 @@ void alogmaniacFinals(){
     }
 }
 
+void roomAllocation(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int count = 0;
+        for(int i=0; i<n; i++){
+            int j;
+            cin >> j;
+            count+=((j+1)/2);
+        }
+        cout << count << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    alogmaniacFinals();
+    // alogmaniacFinals();
+    roomAllocation();
     return 0;
 }
