@@ -31,11 +31,36 @@ void cricketTournament(){
     }
 }
 
+void binaryParity(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int count = 0;
+        int current = 1;
+        for(int i=0; i<30; i++){
+            if(n&current){
+                count++;
+            }
+            current = current<<1;
+        }
+        if(count%2){
+            cout << "ODD" << endl;
+        }
+        else{
+            cout << "EVEN" << endl;
+        }
+        
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    cricketTournament();
+    // cricketTournament();
+    binaryParity();
     return 0;
 }
