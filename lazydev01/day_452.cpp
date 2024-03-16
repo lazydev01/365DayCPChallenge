@@ -21,11 +21,29 @@ void overspeeding(){
     }
 }
 
+void fiftyFiftyRule(){
+    int t;
+    cin >> t;
+    while(t--){
+        int attendance, marks;
+        cin >> attendance >> marks;
+        char grade = 'A';
+        if(attendance<50){
+            grade = 'Z';
+        }
+        else if(marks<50){
+            grade = 'F';
+        }
+        cout << grade << endl;
+    }
+} 
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    overspeeding();
+    // overspeeding();
+    fiftyFiftyRule();
     return 0;
 }
