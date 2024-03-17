@@ -35,11 +35,31 @@ void fakeCertificate(){
     }
 }
 
+void tableStrength(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> weights(n);
+        for(int i = 0; i < n; i++){
+            cin >> weights[i];
+        }
+        sort(weights.begin(), weights.end(), greater<int>());
+        int max_strength = 0;
+        for(int i=0; i<n; i++){
+            max_strength = max(max_strength, (weights[i]*(i+1)));
+        }
+        cout << max_strength << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    fakeCertificate();
+    // fakeCertificate();
+    tableStrength();
     return 0;
 }
