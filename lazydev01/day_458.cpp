@@ -33,12 +33,33 @@ void diceGame3(){
     }
 }
 
+void sale(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        int curr_sum = 0;
+        int max_sum = 0;
+        for(auto i : arr){
+            max_sum = max(max_sum, curr_sum + (2*i));
+            curr_sum += i;
+        }
+        cout << max_sum << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // acPlease();
-    diceGame3();
+    // diceGame3();
+    sale();
     return 0;
 }
