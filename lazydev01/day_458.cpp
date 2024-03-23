@@ -21,11 +21,24 @@ void acPlease(){
     }
 }
 
+void diceGame3(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int ans = 0;
+        ans = ((n/2)*13 + ((n%2)?6:0));
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    acPlease();
+    // acPlease();
+    diceGame3();
     return 0;
 }
