@@ -36,11 +36,50 @@ void permutationDisturbance(){
     }
 }
 
+void binaryMinimal(){
+  int t;
+  cin >> t;
+  while(t--){
+    int n, k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    string ans = "";
+    int count_ones = 0;
+    for(auto i : s){
+      if(i=='1'){
+        count_ones++;
+      }
+    }
+    int count_zeroes = n - count_ones;
+    if(k>=count_ones){
+      for(int i=0; i<max(0ll, (count_ones+count_zeroes-k)); i++){
+        ans+='0';
+      }
+    }
+    else{
+      for(auto i : s){
+        if(k==0){
+          ans+=i;
+        }
+        else{
+          if(i=='1'){
+            k--;
+          }
+          ans+='0';
+        }
+      }
+    }
+    cout << ans << endl;
+  }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    permutationDisturbance();
+    // permutationDisturbance();
+    binaryMinimal();
     return 0;
 }
