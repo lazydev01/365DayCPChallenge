@@ -74,12 +74,36 @@ void binaryMinimal(){
   }
 }
 
+void freedom(){
+  int t;
+  cin >> t;
+  while(t--){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+      cin >> arr[i];
+    }
+    map<int, int> mp;
+    int ans = 0;
+    for(int i=0; i<n; i++){
+      if(arr[i]!=1 && (3*arr[i])%(arr[i]-1)==0){
+        int b = (3*arr[i])/(arr[i]-1);
+        ans+=mp[b];
+      }
+      mp[arr[i]]++;
+    }
+    cout << ans << endl;
+  }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // permutationDisturbance();
-    binaryMinimal();
+    // binaryMinimal();
+    freedom();
     return 0;
 }
