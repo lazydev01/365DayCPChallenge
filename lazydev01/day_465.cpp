@@ -21,11 +21,29 @@ void theIdesOfMarch(){
     }
 }
 
+void extremeBasketball(){
+    int t;
+    cin >> t;
+    while(t--){
+        int a, b;
+        cin >> a >> b;
+        if(a-b >=10){
+            cout << 0 << endl;
+        }
+        else{
+            int diff = a-b;
+            int toScore = 10-diff;
+            cout << (ceil)(toScore/3.0) << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    theIdesOfMarch();
+    // theIdesOfMarch();
+    extremeBasketball();
     return 0;
 }
