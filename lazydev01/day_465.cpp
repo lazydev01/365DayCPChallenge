@@ -38,12 +38,29 @@ void extremeBasketball(){
     }
 }
 
+void superincreasing(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, k, x;
+        cin >> n >> k >> x;
+        int log_x = log2(x);
+        if(log_x>=k-1){
+            cout << "YES" << endl;
+        }
+        else{
+            cout << "NO" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // theIdesOfMarch();
-    extremeBasketball();
+    // extremeBasketball();
+    superincreasing();
     return 0;
 }
