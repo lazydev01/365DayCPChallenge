@@ -37,12 +37,33 @@ void triangularSwaps(){
     }
 }
 
+void stairPeakOrNeither(){
+    int t;
+    cin >> t;
+    while(t--){
+        int a, b, c;
+        cin >> a >> b >> c;
+        if(a<b){
+            if(b<c){
+                cout << "STAIR" << endl;
+            }
+            else{
+                cout << "PEAK" << endl;
+            }
+        }
+        else{
+            cout << "NONE" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    triangularSwaps();
+    // triangularSwaps();
+    stairPeakOrNeither();
     return 0;
 }
 
