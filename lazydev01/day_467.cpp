@@ -47,8 +47,11 @@ void stairPeakOrNeither(){
             if(b<c){
                 cout << "STAIR" << endl;
             }
-            else{
+            else if(b>c){
                 cout << "PEAK" << endl;
+            }
+            else{
+                cout << "NONE" << endl;
             }
         }
         else{
