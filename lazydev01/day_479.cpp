@@ -57,12 +57,41 @@ void pepBidding(){
     }
 }
 
+void ballonDOr(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        map<int, int> mp;
+        for(int i=0; i<n; i++){
+            int tmp;
+            cin >> tmp;
+            mp[tmp]++;
+        }
+        bool flag = false;
+        for(auto i : mp){
+            if(i.first!=1 && i.second%8!=0){
+                flag = true;
+                break;
+            }
+        }
+        if(flag){
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // footballTraining();
-    pepBidding();
+    // pepBidding();
+    ballonDOr();
     return 0;
 }
