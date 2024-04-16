@@ -34,11 +34,36 @@ void lessOrEqual(){
     }
 }
 
+void div7(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int mod = n%7;
+        if(mod==0){
+            cout << n << endl;
+        }
+        else{
+            int before = n/10;
+            int add = n + (7-mod);
+            int after = add/10;
+            if(before==after){
+                cout << add << endl;
+            }
+            else{
+                cout << (n-mod) << endl;
+            }
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    lessOrEqual();
+    // lessOrEqual();
+    div7();
     return 0;
 }
