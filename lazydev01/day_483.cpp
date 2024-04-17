@@ -36,11 +36,36 @@ void balancedRound(){
     }
 }
 
+void arrangingCats(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        string start, final;
+        cin >> start >> final;
+        int misplaced_one = 0;
+        int misplaced_zero = 0;
+        for(int i=0; i<n; i++){
+            if(start[i]!=final[i]){
+                if(start[i]=='1'){
+                    misplaced_one++;
+                }
+                else{
+                    misplaced_zero++;
+                }
+            }
+        }
+        cout << (max(misplaced_one, misplaced_zero)) << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    balancedRound();
+    // balancedRound();
+    arrangingCats();
     return 0;
 }
