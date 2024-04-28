@@ -26,11 +26,34 @@ void gottaCatchThemAll(){
     }
 }
 
+void diceDeception(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, k;
+        cin >> n >> k;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        sort(arr.begin(), arr.end());
+        int sum = 0;
+        for(int i=0; i<min(n, k); i++){
+            sum += max(arr[i], 7-arr[i]);
+        }
+        for(int i=min(n, k); i<n; i++){
+            sum+=arr[i];
+        }
+        cout << sum << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-   gottaCatchThemAll();
+//    gottaCatchThemAll();
+    diceDeception();
     return 0;
 }
