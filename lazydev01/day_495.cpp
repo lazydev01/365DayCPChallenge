@@ -36,11 +36,26 @@ void combinationLock(){
     cout << ans << endl;
 }
 
+void omkarAndCompletion(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int start = 1;
+        for(int i=0; i<n; i++){
+            cout << start << " ";
+        }
+        cout << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    combinationLock();
+    // combinationLock();
+    omkarAndCompletion();
     return 0;
 }
