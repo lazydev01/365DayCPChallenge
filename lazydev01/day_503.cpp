@@ -35,11 +35,30 @@ void uniqueNumber(){
     }
 }
 
+void mahmoudAndATriangle(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    sort(arr.begin(), arr.end());
+    for(int i=n-1; i>=2; i--){
+        if(arr[i] < arr[i-2] + arr[i-1]){
+            
+            cout << "YES" << endl;
+            return;
+        }
+    }
+    cout << "NO" << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    uniqueNumber();
+    // uniqueNumber();
+    mahmoudAndATriangle();
     return 0;
 }
