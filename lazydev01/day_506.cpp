@@ -38,11 +38,43 @@ void friendsAndCandies(){
     }
 }
 
+void poweredParameters(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        int maxi = 0;
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+            maxi = max(maxi, arr[i]);
+        }
+        int ans = 0;
+        for(int i=0; i<n; i++){
+            if(arr[i]==1){
+                ans+=n;
+            }
+            else{
+                for(int j=1; j<=n; j++){
+                    int power = pow(arr[i], j);
+                    if(power>maxi){
+                        break;
+                    }
+                    if(power <= arr[j-1]) ans++;
+                }
+            }
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    friendsAndCandies();
+    // friendsAndCandies();
+    poweredParameters();
     return 0;
 }
