@@ -47,11 +47,32 @@ void notAdjacentMatrix(){
     }
 }
 
+void denseArray(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i=0; i<n; i++){
+            cin >> arr[i];
+        }
+        int ans = 0;
+        for(int i=0; i<n-1; i++){
+            if(max(arr[i], arr[i+1]) > (2 * min(arr[i], arr[i+1]))){
+                ans+=((ceil)(log2(max(arr[i], arr[i+1])/(min(arr[i], arr[i+1])*1.0))) -1);
+            }
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    notAdjacentMatrix();
+    // notAdjacentMatrix();
+    denseArray();
     return 0;
 }
