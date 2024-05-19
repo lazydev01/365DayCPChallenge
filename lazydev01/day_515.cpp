@@ -41,12 +41,27 @@ void lovelyPalindromes(){
     cout << og << endl;
 }
 
+void digitsSum(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        int ans = n/10;
+        if(n%10==9){
+            ans++;
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // followingTheString();
-    lovelyPalindromes();
+    // lovelyPalindromes();
+    digitsSum();
     return 0;
 }
