@@ -32,11 +32,21 @@ void followingTheString(){
     }
 }
 
+void lovelyPalindromes(){
+    string n;
+    cin >> n;
+    string og = n;
+    reverse(n.begin(), n.end());
+    og+=n;
+    cout << og << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    followingTheString();
+    // followingTheString();
+    lovelyPalindromes();
     return 0;
 }
