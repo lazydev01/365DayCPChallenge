@@ -61,11 +61,36 @@ void djikstra(){
     cout << endl;
 }
 
+void longJumps(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for(int i = 0; i < n; i++)cin >> arr[i];
+        vector<int> dp(n);
+        dp[n-1] = arr[n-1];
+        int ans = dp[n-1];
+        for(int i = n-2; i>=0; i--){
+            if(i+arr[i] < n){
+                dp[i] = arr[i]+dp[i+arr[i]];
+            }
+            else{
+                dp[i] = arr[i];
+            }
+            ans = max(ans, dp[i]);
+        }
+        cout << ans << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    djikstra();
+    // djikstra();
+    longJumps();
     return 0;
 }
