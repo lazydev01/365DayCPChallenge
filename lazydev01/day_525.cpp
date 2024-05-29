@@ -24,11 +24,50 @@ void squaresAndCubes(){
     }
 }
 
+void vladAndShapes(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        cin >> n;
+        vector<string> arr(n);
+        for(int i = 0; i < n; i++){
+            cin >> arr[i];
+        }
+        int prev_one = 0;
+        int curr_one = 0;
+        bool isSquare = false;
+        for(int i=0; i<n; i++){
+            if(prev_one==curr_one && curr_one!=0){
+                isSquare = true;
+                break;
+            }
+            prev_one = curr_one;
+            curr_one = 0;
+            for(int j=0; j<n; j++){
+                if(arr[i][j]== '1'){
+                    curr_one++;
+                }
+            }
+        }
+        if(prev_one==curr_one && curr_one!=0){
+            isSquare = true;
+        }
+        if(isSquare){
+            cout << "SQUARE" << endl;
+        }
+        else{
+            cout << "TRIANGLE" << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    squaresAndCubes();
+    // squaresAndCubes();
+    vladAndShapes();
     return 0;
 }
