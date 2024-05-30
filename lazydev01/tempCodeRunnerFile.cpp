@@ -10,29 +10,30 @@ using namespace std;
 #define YES cout<<"YES\n"
 #define NO cout<<"NO\n"
 
-void productOfThreeNumbers(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        vector<int> ans;
-        for(int i=2; i<=sqrt(n); i++){
-            if(n%i==0){
-                ans.push_back(i);
-                if(ans.size()==3){
-                    break;
-                }
-            }
-        }
-        if(ans.size()==3){
-            cout << "YES" << endl;
-            cout << ans[0] << " " << ans[1] << " " << n/(ans[0]*ans[1]) << endl;
+void brackets(){
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int balance = 0;
+    int max_balance = 0;
+    for(auto i : s){
+        if(i=='('){
+            balance++;
         }
         else{
-            cout << "NO" << endl;
+            balance--;
         }
+        max_balance = max(max_balance, balance);
     }
+    string ans = "";
+    for(int i = 0; i<max_balance; i++){
+        ans+='(';
+    }
+    for(int i = 0; i<max_balance; i++){
+        ans+=')';
+    }
+    cout << ans << endl;
 }
 
 int32_t main()
@@ -40,6 +41,6 @@ int32_t main()
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    productOfThreeNumbers();
+    brackets();
     return 0;
 }

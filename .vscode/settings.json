@@ -22,6 +22,7 @@
         "initializer_list": "cpp",
         "regex": "cpp",
         "valarray": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "cmath": "cpp"
     }
 }
