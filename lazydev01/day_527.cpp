@@ -47,11 +47,27 @@ void isItACat(){
     }
 }
 
+void strangeTable(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, m, x;
+        cin >> n >> m >> x;
+        int col = ((x-1)/n) + 1;
+        int row = x%n;
+        if(row==0){
+            row = n;
+        }
+        cout << ((row-1)*m) + col << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    isItACat();
+    // isItACat();
+    strangeTable();
     return 0;
 }
