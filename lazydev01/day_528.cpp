@@ -64,12 +64,35 @@ void stringLCM(){
     }
 }
 
+void theCakeIsALie(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n, m, k;
+        cin >> n >> m >> k;
+        cout << ((n*m-1)==k ? "YES" : "NO") << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // minimumVariedNumber();
-    stringLCM();
+    // stringLCM();
+    theCakeIsALie();
     return 0;
 }
+
+/*
+
+###
+###
+###
+
+
+
+
+
+*/
