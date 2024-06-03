@@ -66,11 +66,40 @@ void comparingTShirtSizes(){
     }
 }
 
+void differentString(){
+    int t;
+    cin >> t;
+    while(t--){
+        string s;
+        cin >> s;
+        char a, b;
+        a = 0;
+        b = '?';
+        for(int i=1; i<s.size(); i++){
+            if(s[i]!=s[a]){
+                b = i;
+                break;
+            }
+        }
+        if(b=='?'){
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+            char temp = s[a];
+            s[a] = s[b];
+            s[b] = temp;
+            cout << s << endl;
+        }
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    comparingTShirtSizes();
+    // comparingTShirtSizes();
+    differentString();
     return 0;
 }
