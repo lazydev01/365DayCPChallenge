@@ -32,11 +32,39 @@ void problemGenerator(){
     }
 }
 
+void game23(){
+    int x, y;
+    cin >> x >> y;
+    if(y%x!=0){
+        cout << -1 << endl;
+        return;
+    }
+    int div = y/x;
+    int ans = 0;
+    while(div!=1){
+        if(div%2==0){
+            div/=2;
+            ans++;
+        }
+        else if(div%3==0){
+            div/=3;
+            ans++;
+        }
+        else{
+            cout << -1 << endl;
+            return;
+        }
+    }
+    cout << ans << endl;
+    
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    problemGenerator();
+    // problemGenerator();
+    game23();
     return 0;
 }
