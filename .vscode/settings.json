@@ -23,6 +23,7 @@
         "regex": "cpp",
         "valarray": "cpp",
         "limits": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "sstream": "cpp"
     }
 }
