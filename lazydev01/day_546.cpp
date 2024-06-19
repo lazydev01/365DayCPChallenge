@@ -58,12 +58,40 @@ void kadanesAlgorithm(){
     cout << maxSum << endl;
 }
 
+void kadanesAlgorithmFollowUp(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    int currSum = 0;
+    int maxSum = INT_MIN;
+    int ansStart = -1;
+    int ansEnd = -1;
+    int currStart = 0;
+    for(int i=0; i<n; i++){
+        currSum += arr[i];
+        if(currSum < 1){
+            currSum = 0;
+            currStart = i+1;
+        }
+        if(maxSum < currSum){
+            maxSum = currSum;
+            ansStart = currStart;
+            ansEnd = i;
+        }
+    }
+    cout << ansStart << " " << ansEnd << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // sequenceGame();
-    kadanesAlgorithm();
+    // kadanesAlgorithm();
+    kadanesAlgorithmFollowUp();
     return 0;
 }
