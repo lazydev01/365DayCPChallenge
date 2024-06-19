@@ -39,11 +39,31 @@ void sequenceGame(){
     }
 }
 
+void kadanesAlgorithm(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    int maxSum = INT_MIN;
+    int currSum = 0;
+    for(int i=0; i<n; i++){
+        currSum+=arr[i];
+        maxSum = max(maxSum, currSum);
+        if(currSum < 0){
+            currSum = 0;
+        }
+    }
+    cout << maxSum << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    sequenceGame();
+    // sequenceGame();
+    kadanesAlgorithm();
     return 0;
 }
