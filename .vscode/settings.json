@@ -24,6 +24,14 @@
         "valarray": "cpp",
         "limits": "cpp",
         "cmath": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "memory": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "shared_mutex": "cpp",
+        "streambuf": "cpp",
+        "thread": "cpp"
     }
 }
