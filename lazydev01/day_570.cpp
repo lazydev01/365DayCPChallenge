@@ -50,12 +50,37 @@ void pow_x_n_optimal(){
     cout << fixed << setprecision(5) << ans << endl;
 }
 
+void findMajorityElement(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    int currMajor = arr[0];
+    int freq = 1;
+    for(int i=0; i<n; i++){
+        if(arr[i] == currMajor){
+            freq++;
+        }
+        else{
+            freq--;
+        }
+        if(freq==0){
+            currMajor = arr[i];
+            freq = 1;
+        }
+    }
+    cout << currMajor << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     
-    pow_x_n_optimal();
+    // pow_x_n_optimal();
+    findMajorityElement();
     return 0;
 }
