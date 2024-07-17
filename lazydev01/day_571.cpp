@@ -31,31 +31,13 @@ void onlyPluses(){
     }
 }
 
-void majorityElementN3(){
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
-    }
-    map<int, int> mp;
-    for(int i=0; i<n; i++){
-        mp[arr[i]]++;
-    }
-    for(auto i : mp){
-        if(i.second > (n/3)){
-            cout << i.first << " ";
-        }
-    }
-    cout << endl;
-}
+
 
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    // onlyPluses();
-    majorityElementN3();
+    onlyPluses();
     return 0;
 }
