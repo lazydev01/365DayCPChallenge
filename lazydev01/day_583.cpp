@@ -61,12 +61,48 @@ void longestConsecutiveSequenceOptimal(){
     cout << max_count << endl;
 }
 
+void longestSubarrayWithZeroSum(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    map<int, int> mp;
+    int sum = 0;
+    int max_count = 0;
+    for(int i = 0; i < n; i++){
+        if(mp[sum]){
+            max_count = max(max_count, i-mp[sum]+1);
+        }
+        else{
+            mp[sum] = i+1;
+        }
+    }
+    cout << max_count << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // longestConsecutiveSequence();
-     longestConsecutiveSequenceOptimal();
+    //  longestConsecutiveSequenceOptimal();
+    longestSubarrayWithZeroSum();
     return 0;
 }
+
+/*
+
+9, -3, 3, -1, 6, -5, 3
+9 6 9 8 14 9 12
+
+
+9, -3, 3, 5, -1, 6, -5, 3
+9 6 9 14 13 19 14 17 
+
+
+
+
+*/
