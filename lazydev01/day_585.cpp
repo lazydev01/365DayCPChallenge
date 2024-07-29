@@ -45,13 +45,35 @@ void countNumberOfSubarraysWithGivenXorK(){
     cout << ans << endl;
 }
 
+void lengthOfLongestSubstringWithoutAnyRepeatingCharacter(){
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    unordered_set<int> st;
+    int left = 0;
+    int ans = 0;
+    for(int right = 0; right < n; right++){
+        if(st.find(s[right])!=st.end()){
+            while(left < right && st.find(s[right])!=st.end()){
+                st.erase(s[left]);
+                left++;
+            }
+        }
+        st.insert(s[right]);
+        ans = max(ans, right - left + 1);
+    }
+    cout << ans << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // angryMonk();
-    countNumberOfSubarraysWithGivenXorK();
+    // countNumberOfSubarraysWithGivenXorK();
+    lengthOfLongestSubstringWithoutAnyRepeatingCharacter();
     return 0;
 }
 
