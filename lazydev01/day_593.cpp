@@ -89,12 +89,35 @@ void findMiddleElementOfLinkedList(){
     printLinkedList(head);
 }
 
+void findMiddleElementOfLinkedListOptimal(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    ListNode* ll = initializeLinkedList(n, arr);
+    ListNode* fast = ll;
+    ListNode* slow = ll;
+    while(fast->next!=NULL){
+        fast=fast->next;
+        if(fast->next==NULL){
+            slow = slow->next;
+            break;
+        }
+        fast = fast->next;
+        slow = slow->next;
+    }
+    printLinkedList(slow);
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     // goodPrefixes();
-    findMiddleElementOfLinkedList();
+    // findMiddleElementOfLinkedList();
+    findMiddleElementOfLinkedListOptimal();
     return 0;
 }
