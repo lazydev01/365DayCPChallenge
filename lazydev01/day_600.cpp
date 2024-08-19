@@ -16,7 +16,7 @@ void primaryTask(){
     while(t--){
         string s;
         cin >> s;
-        if(s.substr(0, 2)!="10"){
+        if(s.size() < 3 || s.substr(0, 2)!="10"){
             cout << "NO" << endl;
         }
         else{
