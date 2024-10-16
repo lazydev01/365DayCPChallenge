@@ -34,11 +34,48 @@ void wonderfulColoring1(){
     }
 }
 
+void calcSubset(vector<int> &arr, int target, int index, vector<vector<int>> &ans, vector<int> &subset){
+    int currSubsetSum = accumulate(subset.begin(), subset.end(), 0);
+    if(currSubsetSum==target){
+        ans.push_back(subset);
+        return;
+    }
+    int n = arr.size();
+    for(int i=index; i<n; i++){
+        if(currSubsetSum + arr[i] > target) return;
+        subset.push_back(arr[i]);
+        calcSubset(arr, target, i, ans, subset);
+        subset.pop_back();
+    }
+}
+
+void combinationSum1(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    int target;
+    cin >> target;
+    vector<vector<int>> ans;
+    vector<int> subset;
+    sort(arr.begin(), arr.end());
+    calcSubset(arr, target, 0, ans, subset);
+    for(int i=0; i<ans.size(); i++){
+        for(int j=0; j<ans[i].size(); j++){
+            cout << ans[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    wonderfulColoring1();
+    // wonderfulColoring1();
+    combinationSum1();
     return 0;
 }
