@@ -41,11 +41,53 @@ void longestGoodArray(){
     }
 }
 
+bool checkIfPalindrome(string s){
+    if(s.size()==0) return false;
+    for(int i=0; i<s.size()/2; i++){
+        if(s[i]!=s[s.size()-i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+void getPalindromeSubsets(int index, string s, vector<string> &subset, vector<vector<string>> &ans, string currSubstring){
+    if(index==s.size()){
+        if(currSubstring.size()==0){
+            ans.push_back(subset);
+        }
+        return;
+    }
+    if(checkIfPalindrome(currSubstring + s[index])){
+        subset.push_back(currSubstring + s[index]);
+        getPalindromeSubsets(index+1, s, subset, ans, "");
+        subset.pop_back();
+    }
+    getPalindromeSubsets(index+1, s, subset, ans, currSubstring + s[index]);
+}
+
+
+void palindromePartitioning(){
+    string s;
+    cin >> s;
+    int n = s.size();
+    vector<string> subset;
+    vector<vector<string>> ans;
+    getPalindromeSubsets(0, s, subset, ans, "");
+    for(int i=0; i<ans.size(); i++){
+        for(int j=0; j<ans[i].size(); j++){
+            cout << ans[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    longestGoodArray();
+    // longestGoodArray();
+    palindromePartitioning();
     return 0;
 }
