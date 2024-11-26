@@ -43,11 +43,62 @@ void negativesAndPositives(){
     }
 }
 
+void medianOfRowWiseSortedMatrix(){
+    int m, n;
+    cin >> m >> n;
+    vector<vector<int>> matrix(m, vector<int>(n));
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cin >> matrix[i][j];
+        }
+    }
+    int minEl = INT_MAX;
+    int maxEl = INT_MIN;
+    for(int i=0; i<m; i++){
+        minEl = min(minEl, matrix[i][0]);
+    }
+    for(int i=0; i<m; i++){
+        maxEl = max(maxEl, matrix[i][n-1]);
+    }
+    int low = minEl;
+    int high = maxEl;
+    int ans = -1;
+    while(low<=high){
+        int mid = (low + high)/2;
+        int smallerOrEqual = 0;
+        for(int i=0; i<m; i++){
+            int l = 0;
+            int r = n-1;
+            int sOrE = 0;
+            while(l<=r){
+                int mi = (l + r)/2;
+                if(matrix[i][mi]<=mid){
+                    sOrE = mi+1;
+                    l = mi+1;
+                }
+                else{
+                    r = mi - 1;
+                }
+            }
+            smallerOrEqual += sOrE;
+        }
+        if(smallerOrEqual >= (ceil)((n*m)/2.0)){
+            ans = mid;
+            high = mid - 1;
+        }
+        else{
+            low = mid + 1;
+        }
+    }
+    cout << ans << endl;
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    negativesAndPositives();
+    // negativesAndPositives();
+    medianOfRowWiseSortedMatrix();
     return 0;
 }
