@@ -35,11 +35,24 @@ void skiResort(){
     }
 }
 
+void allocateMinimumNumberOfPages(){
+    int n, m;
+    cin >> n >> m;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    if(m>n){
+        cout << -1 << endl;
+    }
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
-    skiResort();
+    // skiResort();
+    allocateMinimumNumberOfPages();
     return 0;
 }
