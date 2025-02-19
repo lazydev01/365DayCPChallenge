@@ -26,6 +26,27 @@ void jellyfishAndUndertale(){
     }
 }
 
+// Implement Stack using Array
+
+struct MyStack {
+    int arr[1000];
+    int top = -1;
+};
+
+void push(struct MyStack* stack, int a) {
+    stack->arr[(stack->top)+1] = a;
+    stack->top++;
+}
+
+// Function to pop an item from the top of the stack
+int pop(struct MyStack* stack) {
+    if(stack->top==-1){
+        return stack->top;
+    }
+    stack->top--;
+    return stack->arr[(stack->top)+1];
+}
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
