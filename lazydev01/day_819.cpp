@@ -33,6 +33,50 @@ void doubleEndedStrings(){
     }
 }
 
+class Solution {
+public:
+    int orangesRotting(vector<vector<int>>& grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        vector<vector<bool>> visited(n, vector<bool>(m, false));
+        queue<pair<pair<int, int>, int>> q;
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j< m; j++){
+                if(grid[i][j] == 2){
+                    q.push(make_pair(make_pair(i, j), 0));
+                }
+            }
+        }
+        int time = 0;
+        while(!q.empty()){
+            pair<pair<int, int>, int> currEntry = q.front();
+            q.pop();
+            pair<int, int> currOrange = currEntry.first;
+            int currRow = currOrange.first;
+            int currCol = currOrange.second;
+            visited[currRow][currCol] = true;
+            int currTime = currEntry.second;
+            vector<int> rows = {0, 1, 0, -1};
+            vector<int> cols = {1, 0, -1, 0};
+            for(int i = 0; i<4; i++){
+                if((currRow + rows[i]) >= 0 && (currRow + rows[i]) < n && (currCol + cols[i]) >= 0 && (currCol + cols[i]) < m && !visited[currRow + rows[i]][currCol + cols[i]] && grid[currRow + rows[i]][currCol + cols[i]] == 1){
+                    q.push(make_pair(make_pair(currRow + rows[i], currCol + cols[i]), currTime + 1));
+                    grid[currRow + rows[i]][currCol + cols[i]] = 2;
+                    time = max(time, currTime + 1);
+                }
+            }
+        }
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(grid[i][j] == 1){
+                    return -1;
+                }
+            }
+        }
+        return time;
+    }
+};
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
