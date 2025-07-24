@@ -17,11 +17,9 @@ void hexadecimalsTheorem(){
     fib.push_back(0);
     fib.push_back(1);
     int num = fib[fib.size() - 1] + fib[fib.size() - 2];
-    // cout << num << endl;
     while(num <= 1e9){
         fib.push_back(num);
         num = fib[fib.size() - 1] + fib[fib.size() - 2];
-        // cout << num << endl;
     }
     int a = *lower_bound(fib.begin(), fib.end(), n);
     n-=a;
