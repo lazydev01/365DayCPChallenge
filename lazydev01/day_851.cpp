@@ -29,6 +29,50 @@ void ezzatAndTwoSubsequences(){
     }
 }
 
+class Solution {
+public:
+    int myAtoi(string s) {
+        bool isStart = true;
+        string ansInt = "";
+        bool hasNumStarted = false;
+        bool isNumberNegative = false;
+        bool nonZeroEncountered = false;
+        for(auto i : s){
+            if(i == ' ' && isStart){
+
+            }
+            else if(!hasNumStarted && (i == '+' || i == '-')){
+                if(i == '-') isNumberNegative = true;
+                isStart = false;
+                hasNumStarted = true;
+            }
+            else if(i - '0' >= 0 && i - '0' <= 9){
+                if(i - '0' != 0){
+                    nonZeroEncountered = true;
+                }
+                if(nonZeroEncountered){
+                    ansInt += i;
+                }
+                isStart = false;
+                hasNumStarted = true;
+            }
+            else{
+                break;
+            }
+        }
+        if(ansInt.size() > 10){
+            if(isNumberNegative) return INT_MIN;
+            return INT_MAX;
+        }
+        long long ans = 0;
+        for(int i = 0; i < ansInt.size(); i++){
+            ans += (ansInt[i] - '0') * (pow(10, ansInt.size() - i - 1));
+        }
+        if(isNumberNegative) return (ans * -1) <= INT_MIN ? INT_MIN : (ans * -1);
+        return ans >= INT_MAX ? INT_MAX : ans;
+    }
+};
+
 int32_t main()
 {
 ios_base::sync_with_stdio(false);
