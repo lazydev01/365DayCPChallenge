@@ -41,3 +41,56 @@ cin.tie(NULL);
     makeProductEqualOne();
     return 0;
 }
+
+class Solution {
+public:
+    int compareVersion(string version1, string version2) {
+        string revision1 = "";
+        string revision2 = "";
+        int i = 0;
+        int j = 0;
+        while(i < version1.size() || j < version2.size()){
+            if(i >= version1.size() && j < version2.size() && version2[j] == '.'){
+                if(stoi(revision1) > stoi(revision2)) return 1;
+                else if(stoi(revision2) < stoi(revision2)) return -1;
+                i++;
+                j++;
+                revision2 = "";
+            }
+            else if(j >= version2.size() && i < version1.size() && version1[i] == '.'){
+                if(stoi(revision1) > stoi(revision2)) return 1;
+                else if(stoi(revision1) < stoi(revision2)) return -1;
+                i++;
+                j++;
+                revision1 = "";
+            }
+            if(i < version1.size() && version1[i] == '.' && j < version2.size() && version2[j] == '.'){
+                if(stoi(revision1) > stoi(revision2)) return 1;
+                else if(stoi(revision1) < stoi(revision2)) return -1;
+                i++;
+                j++;
+                revision1 = "";
+                revision2 = "";
+            }
+            else if(i < version1.size() && version1[i] != '.'){
+                revision1 += version1[i];
+                i++;
+            }
+            else if(j < version2.size() && version2[j] != '.'){
+                revision2 += version2[j];
+                j++;
+            }
+            if(i > version1.size()){
+                revision1 = "0";
+            }
+            if(j > version2.size()){
+                revision2 = "0";
+            }
+        }
+        if(stoi(revision1) > stoi(revision2)){
+            return 1;
+        }
+        else if(stoi(revision1) < stoi(revision2)) return -1;
+        return 0;
+    }
+};
