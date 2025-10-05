@@ -41,3 +41,24 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+
+    void postOrderT(TreeNode* root, vector<int> &ans){
+        if(root == NULL) return;
+        if(root->left!=NULL){
+            postOrderT(root->left, ans);
+        }
+        if(root->right!=NULL){
+            postOrderT(root->right, ans);
+        }
+        ans.push_back(root->val);
+    }
+
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        postOrderT(root, ans);
+        return ans;
+    }
+};
