@@ -56,3 +56,64 @@ cin.tie(NULL);
     drazilAndFactorial();
     return 0;
 }
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int data;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *      TreeNode(int val) : data(val) , left(nullptr) , right(nullptr) {}
+ * };
+ **/
+
+ struct TreeNode {
+      int data;
+      TreeNode *left;
+      TreeNode *right;
+       TreeNode(int val) : data(val) , left(nullptr) , right(nullptr) {}
+  };
+
+class Solution{
+	public:
+		vector<int> succPredBST(TreeNode* root, int key){
+			TreeNode* successor = NULL;
+            TreeNode* predecessor = NULL;
+
+            TreeNode* temp = root;
+            while(temp != NULL){
+                if(key >= temp->data){
+                    temp = temp->right;
+                }
+                else{
+                    successor = temp;
+                    temp = temp->left;
+                }
+            }
+
+            temp = root;
+            while(temp != NULL){
+                if(key <=  temp->data){
+                    temp = temp->left;
+                }
+                else{
+                    predecessor = temp;
+                    temp = temp->right;
+                }
+            }
+            vector<int> ans;
+            if(predecessor == NULL){
+                ans.push_back(-1);
+            }
+            else{
+                ans.push_back(predecessor->data);
+            }
+            if(successor == NULL){
+                ans.push_back(-1);
+            }
+            else{
+                ans.push_back(successor->data);
+            }
+            return ans;
+		}
+};
